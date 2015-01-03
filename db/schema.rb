@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103150628) do
+ActiveRecord::Schema.define(version: 20150103154702) do
+
+  create_table "brand_grapes", force: :cascade do |t|
+    t.integer  "percentage"
+    t.integer  "brand_id"
+    t.integer  "grape_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "brand_grapes", ["brand_id"], name: "index_brand_grapes_on_brand_id"
+  add_index "brand_grapes", ["grape_id"], name: "index_brand_grapes_on_grape_id"
 
   create_table "brands", force: :cascade do |t|
     t.string   "name",                null: false
@@ -35,6 +46,12 @@ ActiveRecord::Schema.define(version: 20150103150628) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "grapes", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

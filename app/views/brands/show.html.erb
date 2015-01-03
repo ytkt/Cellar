@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @brand.name %>
+</p>
+
+<p>
+  <strong>Vintage:</strong>
+  <%= @brand.vintage %>
+</p>
+
+<p>
+  <strong>Asin:</strong>
+  <%= @brand.asin %>
+</p>
+
+<p>
+  <strong>Jan code:</strong>
+  <%= @brand.jan_code %>
+</p>
+
+<p>
+  <strong>Temperature low:</strong>
+  <%= @brand.temperature_low %>
+</p>
+
+<p>
+  <strong>Temperature high:</strong>
+  <%= @brand.temperature_high %>
+</p>
+
+<p>
+  <strong>Serving temperature:</strong>
+  <%= @brand.serving_temperature %>
+</p>
+
+<%= link_to 'Edit', edit_brand_path(@brand) %> |
+<%= link_to 'Back', brands_path %>

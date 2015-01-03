@@ -1,0 +1,45 @@
+<%= form_for(@brand) do |f| %>
+  <% if @brand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+
+      <ul>
+      <% @brand.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :vintage %><br>
+    <%= f.number_field :vintage %>
+  </div>
+  <div class="field">
+    <%= f.label :asin %><br>
+    <%= f.number_field :asin %>
+  </div>
+  <div class="field">
+    <%= f.label :jan_code %><br>
+    <%= f.number_field :jan_code %>
+  </div>
+  <div class="field">
+    <%= f.label :temperature_low %><br>
+    <%= f.number_field :temperature_low %>
+  </div>
+  <div class="field">
+    <%= f.label :temperature_high %><br>
+    <%= f.number_field :temperature_high %>
+  </div>
+  <div class="field">
+    <%= f.label :serving_temperature %><br>
+    <%= f.number_field :serving_temperature %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

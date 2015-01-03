@@ -1,8 +1,8 @@
 class CreateBrands < ActiveRecord::Migration
   def change
     create_table :brands do |t|
-      t.string :name
-      t.integer :vintage
+      t.string :name, null: false
+      t.integer :vintage, null: false
       t.integer :asin
       t.integer :jan_code
       t.integer :temperature_low
